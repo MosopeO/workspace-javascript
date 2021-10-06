@@ -1,4 +1,3 @@
-
 /* Send a customized message based on time
 */
 console.log("I am in the hello.js");
@@ -12,7 +11,11 @@ var hoursNow = today.getHours();
 var greetings = "";
 if (hoursNow <= 12){
   greetings = "Good Morning";
-}else{
+}
+else if (12 < hoursNow <= 17){
+  greetings = "Good Afternoon"
+}
+else{
   greetings = "Good Evening";
 }
 

@@ -23,7 +23,7 @@
                 <script>
                     document.title = "JavaScript Basic -- In class practice";
                     // use document.write to display a message
-                    document.write("Hi! First practise in javascript")
+                    document.writeln("**Hi! My first practise in javascript**")
 
                     // use console.log to display a message   
                     consol.log("debugging window")
@@ -32,21 +32,29 @@
                 </script>
             </p>
             <p> Please import external file hello.js here. 
-                
+                <script src="js/hello.js"> </script>
             </p>
         </div>
 
         <div class="practice">
             <h1> Variable and Arithemetic Operation</h1>
             <p> Practice on variables </p>
-
-
+                <script>
+                    var a = 18
+                    var b = "2"
+                    var c = a + b
+                    document.write("c = " + c)
+                </script>
         </div>
 
         <div class="practice">
             <h1> JavaScript Escape Sequence</h1>
             <p> Write an image to the page </p>
-
+            <script>
+                for(var i=1; i<7; i++){                    
+                    document.write("<img src=\"img/die"+i+".png\">")                    
+                }
+            </script>
 
             <p> Write a table to the page </p>
 
@@ -56,7 +64,9 @@
             <h1>Window and document object </h1>
             <p> Try alert, open, location, url </p>
             <script>
-
+                //window.alert("Berries and cream")
+                document.write(document.URL)
+                //window.open("www.usca.edu")
             </script>
 
 
@@ -66,7 +76,15 @@
             <h1> Get textcontent of an element </h1>
             <p>Perform arithmetic operation on <span id="num1"> 4 </span> and <span id="num2">5 </span> </p>
             <p>Result:
-                <script src="js/arith.js"></script>
+                <script >
+                    //access the element
+                    var SE = document.getElementById("num1");
+                    var n = parseInt(SE.textContent);
+                    var m = parseInt(document.getElementById("num2").textContent);
+
+                    c = m+n
+                    document.write(c);
+                </script>
             </p>
 
         </div>
