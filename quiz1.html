@@ -27,7 +27,7 @@
 
             <form>
                 <div class="answergroup">
-                <div class="answer selected"><label><input type="checkbox" name="ans" value="1">450-103</label> </div>
+                <div class="answer"><label><input type="checkbox" name="ans" value="1">450-103</label> </div>
                 <div class="answer"><label><input type="checkbox" name="ans" value="2">450-97</label> </div>
                 <div class="answer"><label><input type="checkbox" name="ans" value="3">450-100-3</label> </div>
                 <div class="answer"><label><input type="checkbox" name="ans" value="4">450-100+3</label></div>
@@ -36,6 +36,30 @@
 
             </form>
         </div>
+
+        <script>
+            var anslist = document.getElementsByClassName("answer");
+            for (var i =0; i<anslist.length; i++){
+                anslist[i].addEventListener('click', changeBox)
+            }
+
+            function changeBox(e){
+                var check = this.getAttribute('class')
+
+                if (check == "answer"){
+                    e.preventDefault();
+                    this.setAttribute("class", "answer selected");     
+                    //this.children[0].children[0].checked=true
+                }
+                else{
+                    e.preventDefault();
+                    this.setAttribute("class", "answer");
+                }
+
+                //this.animate([{transform:'rotate(0deg)'}, {transform:'rotate(180deg)'}], {duration:3000,fill:"forwards"})
+                this.animate([{translate:'rotate(0deg)'}, {translate:'rotate(180deg)'}], {duration:3000,fill:"forwards"})
+            }
+        </script>
 
     </div>
     <div class="bottombar">
